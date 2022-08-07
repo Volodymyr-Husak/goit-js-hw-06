@@ -9,11 +9,11 @@ const ingredients = [
 
 function createItems(array = []) {
   const gradientsEl = document.querySelector('#ingredients');
-  for (const arr of array) {
+  array.forEach(arr => {
     const itemEl = document.createElement("li");
     itemEl.textContent = arr;
     gradientsEl.append(itemEl);
-  };
+  })
  };
 
 createItems(ingredients);
