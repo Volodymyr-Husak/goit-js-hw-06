@@ -12,6 +12,7 @@ function createItems(array = []) {
   array.forEach(arr => {
     const itemEl = document.createElement("li");
     itemEl.textContent = arr;
+    itemEl.classList = 'item';
     gradientsEl.append(itemEl);
   })
  };
