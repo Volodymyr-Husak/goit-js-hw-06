@@ -40,10 +40,7 @@ console.log(`Elements: ${technologiesNumber}`);
 // ===============================V2======================================
 console.log('=====================Option #2======================');
 
-const categoriesArrayElV2 = document.querySelectorAll('.item');
-
-const categoriesNumberV2 = categoriesArrayEl.length;
-console.log(`Number of categories: ${categoriesNumberV2}`);
+console.log(`Number of categories: ${categoriesNumber}`);
 console.log('');
 
 const categoriesElV2 = document.querySelector('#categories');
