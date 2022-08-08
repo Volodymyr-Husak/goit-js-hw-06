@@ -2,16 +2,16 @@ const inputEl = document.querySelector("#validation-input");
 
 console.log(inputEl);
 
-inputEl.addEventListener("change", checkCorrectNumber);
+inputEl.addEventListener("change", checkCorrectLengthString);
 
-function checkCorrectNumber() {
-    const numberCharactersEntered = inputEl.value.split('').length;
+function checkCorrectLengthString() {
+    const stringLength = inputEl.value.split('').length;
 
     inputEl.addEventListener("blur", () => {
-    
-        if (numberCharactersEntered < 6) {
+        if (stringLength < 6) {
             inputEl.classList = 'invalid'
-        } else {
+        }
+        else {
             inputEl.classList = 'valid'
         };
     });
