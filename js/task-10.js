@@ -19,25 +19,27 @@ const refs = {
 refs.buttonCreateEl.addEventListener("click", () => {
   const number = refs.inputEl.value;
 
-  function createBoxes(amount) {
-    for (let j = 0; j < amount; j += 1) {
-      let increasedValue = 30;
-      increasedValue += j * 10;
-      // debugger;
-      let newDswEl = document.createElement("div");
-
-      newDswEl.classList = "boxes";
-      newDswEl.style.margin = "10px";
-      newDswEl.style.width = increasedValue + "px";
-      newDswEl.style.height = increasedValue + "px";
-      newDswEl.style.backgroundColor = getRandomHexColor();
-
-      boxesEl.append(newDswEl);
-    }
-  }
-
   createBoxes(number);
 });
+
+function createBoxes(amount) {
+  const newBoxElArray = [];
+  for (let j = 0; j < amount; j += 1) {
+    let increasedValue = 30;
+    increasedValue += j * 10;
+
+    let newBoxEl = document.createElement("div");
+    newBoxEl.classList = "boxes";
+    newBoxEl.style.margin = "10px";
+    newBoxEl.style.width = increasedValue + "px";
+    newBoxEl.style.height = increasedValue + "px";
+    newBoxEl.style.backgroundColor = getRandomHexColor();
+
+    newBoxElArray.push(newBoxEl);
+  }
+
+  boxesEl.append(...newBoxElArray);
+}
 
 refs.buttonDestroyEl.addEventListener("click", destroyBoxes);
 
