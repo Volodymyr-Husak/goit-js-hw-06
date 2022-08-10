@@ -1,23 +1,11 @@
-
 const nameInputEl = document.querySelector("#name-input");
-console.log(nameInputEl);
 
 const nameOutputEl = document.querySelector("#name-output");
-console.log(nameOutputEl);
-
 
 nameInputEl.addEventListener("input", (event) => {
-    nameOutputEl.textContent = event.currentTarget.value;
+  nameOutputEl.textContent = event.currentTarget.value;
+
+  if (nameOutputEl.textContent === "") {
+    nameOutputEl.textContent = "Anonymous";
+  }
 });
-
-nameInputEl.addEventListener("change", emptyStringCheck);
-
-function emptyStringCheck() {
-    const stringLength = nameInputEl.value.split('').length;
-
-    nameInputEl.addEventListener("blur", () => {
-        if (stringLength === 0) {
-            nameOutputEl.textContent = 'Anonymous';
-        } 
-    });
-};
