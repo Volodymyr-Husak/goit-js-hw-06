@@ -1,20 +1,18 @@
+const gradientsEl = document.querySelector("#ingredients");
+
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
-
-function createItems(array = []) {
-  const gradientsEl = document.querySelector('#ingredients');
-  array.forEach(arr => {
-    const itemEl = document.createElement("li");
-    itemEl.textContent = arr;
-    itemEl.classList = 'item';
-    gradientsEl.append(itemEl);
-  })
- };
-
-createItems(ingredients);
+const itemArray = [];
+ingredients.forEach((ingredient) => {
+  const itemEl = document.createElement("li");
+  itemEl.textContent = ingredient;
+  itemEl.classList = "item";
+  itemArray.push(itemEl);
+});
+gradientsEl.append(...itemArray);
